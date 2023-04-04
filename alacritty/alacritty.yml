@@ -1,0 +1,197 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Import additional configuration files
+#
+# Imports are loaded in order, skipping all missing files, with the importing
+# file being loaded last. If a field is already present in a previous import, it
+# will be replaced.
+#
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+#import:
+#  - /path/to/alacritty.yml
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+#env:
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. Both lines and columns
+  # must be non-zero for this to take effect. The number of columns must be at
+  # least `2`, while using a value of `0` for columns and lines will fall back
+  # to the window manager's recommended size
+  dimensions:
+    columns: 85
+    lines: 26
+
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  #position:
+  #  x: 0
+  #  y: 0
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  #padding:
+  #  x: 0
+  #  y: 0
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  #  Window decorations
+  #
+  # Values for `decorations`:
+  # - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: full
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  #opacity: 1.0
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  #startup_mode: Windowed
+  # Window title
+title: FrozenBird
+
+# Allow terminal applications to change Alacritty's window title.
+#dynamic_title: true
+# Window class (Linux/BSD only):
+#class:
+# Application instance name
+#instance: Alacritty
+# General application class
+#general: Alacritty
+# Decorations theme variant (Linux/BSD only)
+#
+# Override the variant of the GTK theme/Wayland client side decorations.
+# Commonly supported values are `dark` and `light`. Set this to `None` to use
+# the default theme variant.
+#decorations_theme_variant: None
+scrolling:
+  history: 10000
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    #family: BlexMono Nerd Font Mono
+    # family: FiraCode Nerd Font
+    family: JetBrains Mono Nerd Font
+    # family: Ligconsolata
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  # Bold font face
+  italic:
+    # Font family If the bold family is not specified, it will fall back to the value specified for the normal font. family: monospace The `style` can be specified to pick a specific face. style: Bold Italic font face italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    # family: OperatorMono Nerd Font
+    #family: IBM Plex Mono
+    # family: FiraCode Nerd Font
+    family: JetBrainsMonoNL Nerd Font
+
+    # The `style` can be specified to pick a specific face.
+    style: Regular Italic
+  size: 13.0
+
+  builtin_box_drawing: true
+  #transparent_background_colors: false
+
+bell:
+  animation: EaseOutcubic
+
+  duration: 1
+  save_to_clipboard: false
+  unfocused_hollow: true
+
+items:
+  - colors:
+      name: 3024 (dark)
+      author: Chris Kempson
+      primary:
+        background: "#090300"
+        foreground: "#a5a2a2"
+      cursor:
+        text: "#090300"
+        cursor: "#00ff88"
+      normal:
+        black: "#090300"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#a5a2a2"
+      bright:
+        black: "#5c5855"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#f7f7f7"
+  - theme: 3024.dark
+colors:
+  # Default colors
+  primary:
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
+
+  cursor:
+    text: '0x1E1D2F'
+    cursor: "0x00ff88"
+
+  # Normal colors
+  normal:
+    black: '0x6E6C7E'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
+
+  # Bright colors
+  bright:
+    black: '0x988BA2'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
+
+  indexed_colors:
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
+theme: Catppuccin
